@@ -38,6 +38,6 @@ Thumbs.db
 
 # Directories #
 ######################
-Properties/
-bin/
-obj/
+Properties/*
+bin/*
+obj/*

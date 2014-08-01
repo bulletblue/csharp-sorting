@@ -10,7 +10,7 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            int[] intArray = new int[3]; // { 0, 58, 36, 81, 27, 34 };
+            int[] intArray = new int[10]; // { 0, 58, 36, 81, 27, 34 };
             Random r = new Random();
 
             Console.WriteLine("Original:");
@@ -23,7 +23,7 @@ namespace Practice
             
             Console.WriteLine();
             //Sort.slowSort(ref intArray, 0);
-            //Sort.quickSort(ref intArray, 0, intArray.Length - 1);
+            Sort.quickSort(ref intArray, 0, intArray.Length - 1);
             //Sort.mergeSort();
 
             Console.WriteLine("New:");

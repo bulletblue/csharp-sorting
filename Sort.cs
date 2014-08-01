@@ -24,8 +24,33 @@ namespace Practice
             }
         }
 
-        public static void mergeSort()
+        public static int[] mergeSort(ref int[] arr, int start, int end)
         {
+            if (arr.Length == 0) return null;
+            else if (arr.Length == 1) return new int[] {arr[1]};
+            else
+            {
+                int midpoint = (end + 1) / 2;
+                int[] left = null, right = null;
+                int[] sortedArray = new int[end + 1];
+
+                if ((end + 1) % 2 == 0) //even
+                {
+                    left = mergeSort(ref arr, 0, midpoint - 1);
+                    right = mergeSort(ref arr, midpoint, end);
+                }
+                else //odd
+                {
+                    left = mergeSort(ref arr, 0, midpoint);
+                    right = mergeSort(ref arr, midpoint + 1, end);
+                }
+
+
+
+
+
+                return null;
+            }
         }
 
         public static void quickSort(ref int[] arr, int wall, int pivot)
@@ -34,16 +59,12 @@ namespace Practice
             {
                 return;
             }
-            else if ((pivot-wall) == 1)
-            {
-                if (arr[wall] > arr[pivot]) swap(ref arr, wall, pivot);
-            }
             else
             {
                 int originalWall = wall;
 
                 for (int i = wall; i < pivot; i++)
-                {
+                {       
                     if (arr[i] < arr[pivot])
                     {
                         swap(ref arr, i, wall);

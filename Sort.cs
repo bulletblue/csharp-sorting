@@ -27,7 +27,8 @@ namespace Practice
         public static int[] mergeSort(ref int[] arr, int start, int end)
         {
             if (arr.Length == 0) return null;
-            else if (arr.Length == 1) return new int[] {arr[1]};
+            else if (arr.Length == 1) return new int[] {arr[0]};
+            else if ((end - start) == 0) return new int[] {arr[end]};
             else
             {
                 int midpoint = (end + 1) / 2;
@@ -47,9 +48,53 @@ namespace Practice
 
                 for (int i = 0; i < left.Length; i++) Console.Write(left[i] + " ");
                 Console.Write("     ");
-                for (int i = 0; i < left.Length; i++) Console.Write(left[i] + " ");
+                for (int i = 0; i < right.Length; i++) Console.Write(right[i] + " ");
+                Console.WriteLine();
 
-                return null;
+                int sortedIndex, leftIndex, rightIndex;
+                sortedIndex = leftIndex = rightIndex = 0;
+
+                while (sortedIndex < sortedArray.Length)
+                {
+                    if (leftIndex < left.Length && rightIndex < right.Length)
+                    {
+                        if (left[leftIndex] < right[rightIndex])
+                        {
+                            sortedArray[sortedIndex] = left[leftIndex];
+                            sortedIndex++;
+                            leftIndex++;
+                        }
+                        else if (right[rightIndex] < left[leftIndex])
+                        {
+                            sortedArray[sortedIndex] = right[rightIndex];
+                            sortedIndex++;
+                            rightIndex++;
+                        }
+                        else
+                        {
+                            sortedArray[sortedIndex] = left[leftIndex];
+                            sortedIndex++;
+                            sortedArray[sortedIndex] = right[rightIndex];
+                            sortedIndex++;
+                            leftIndex++;
+                            rightIndex++;
+                        }
+                    }
+                    else if (leftIndex < left.Length) //right array is used up
+                    {
+                        sortedArray[sortedIndex] = left[leftIndex];
+                        sortedIndex++;
+                        leftIndex++;
+                    }
+                    else if (rightIndex < right.Length) //left array is used up
+                    {
+                        sortedArray[sortedIndex] = right[rightIndex];
+                        sortedIndex++;
+                        rightIndex++;
+                    }
+                }
+
+                return sortedArray;
             }
         }
 

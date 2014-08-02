@@ -10,13 +10,13 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            int[] intArray = new int[4]; // { 0, 58, 36, 81, 27, 34 };
+            int[] intArray = new int[4] { 0, 1, 2, 3 }; // { 0, 58, 36, 81, 27, 34 };
             Random r = new Random();
 
             Console.WriteLine("Original:");
             for (int i = 0; i < intArray.Length; i++)
             {
-                intArray[i] = r.Next(100);
+                //intArray[i] = r.Next(100);
                 Console.Write(intArray[i] + " ");
                 if (i == intArray.Length - 1) Console.WriteLine("");
             }
@@ -27,7 +27,7 @@ namespace Practice
             //Sort.mergeSort();
 
             Console.WriteLine("New:");
-            Sort.mergeSort(ref intArray, 0, intArray.Length);
+            Sort.mergeSort(ref intArray, 0, intArray.Length - 1);
 
 
             /*for (int i = 0; i < intArray.Length; i++)

@@ -28,16 +28,16 @@ namespace Practice
         {
             if (arr.Length == 0) return null;
             else if (arr.Length == 1) return new int[] {arr[0]};
-            else if ((end - start) == 0) return new int[] {arr[end]};
+            else if (start == end) return new int[] {arr[end]};
             else
             {
-                int midpoint = (end + 1) / 2;
+                int midpoint = ((end - start + 1) / 2) + start;
                 int[] left = null, right = null;
-                int[] sortedArray = new int[end + 1];
+                int[] sortedArray = new int[end - start + 1];
 
                 if ((end + 1) % 2 == 0) //even
                 {
-                    left = mergeSort(ref arr, 0, midpoint - 1);
+                    left = mergeSort(ref arr, start, midpoint - 1);
                     right = mergeSort(ref arr, midpoint, end);
                 }
                 else //odd
@@ -46,10 +46,10 @@ namespace Practice
                     right = mergeSort(ref arr, midpoint + 1, end);
                 }
 
-                for (int i = 0; i < left.Length; i++) Console.Write(left[i] + " ");
-                Console.Write("     ");
-                for (int i = 0; i < right.Length; i++) Console.Write(right[i] + " ");
-                Console.WriteLine();
+                //for (int i = 0; i < left.Length; i++) Console.Write(left[i] + " ");
+                //Console.Write("     ");
+                //for (int i = 0; i < right.Length; i++) Console.Write(right[i] + " ");
+                //Console.WriteLine();
 
                 int sortedIndex, leftIndex, rightIndex;
                 sortedIndex = leftIndex = rightIndex = 0;

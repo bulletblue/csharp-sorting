@@ -10,7 +10,7 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            int[] intArray = new int[6] {5, 4, 3, 2, 1, 0 }; // { 0, 58, 36, 81, 27, 34 };
+            int[] intArray = new int[5]; // {4, 3, 2, 1, 0 }; // { 0, 58, 36, 81, 27, 34 };
             Random r = new Random();
 
             Console.WriteLine("Original:");

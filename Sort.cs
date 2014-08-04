@@ -35,14 +35,14 @@ namespace Practice
                 int[] left = null, right = null;
                 int[] sortedArray = new int[end - start + 1];
 
-                if ((end + 1) % 2 == 0) //even
+                if ((end - start + 1) % 2 == 0) //even
                 {
                     left = mergeSort(ref arr, start, midpoint - 1);
                     right = mergeSort(ref arr, midpoint, end);
                 }
                 else //odd
                 {
-                    left = mergeSort(ref arr, 0, midpoint);
+                    left = mergeSort(ref arr, start, midpoint);
                     right = mergeSort(ref arr, midpoint + 1, end);
                 }
 

@@ -10,39 +10,18 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            int[] intArray = new int[5]; // {4, 3, 2, 1, 0 }; // { 0, 58, 36, 81, 27, 34 };
+            int[] arr = new int[10] { 0, 6, 8, 11, 12, 13, 14, 20, 22, 27 };
             Random r = new Random();
 
-            Console.WriteLine("Original:");
-            for (int i = 0; i < intArray.Length; i++)
-            {
-                intArray[i] = r.Next(100);
-                Console.Write(intArray[i] + " ");
-                if (i == intArray.Length - 1) Console.WriteLine("");
-            }
-            
+
+            Sort.quickSort(ref arr, 0, arr.Length - 1);
+
+            for (int i = 0; i < arr.Length; i++) Console.Write("{0} ", arr[i]);
             Console.WriteLine();
-            //Sort.slowSort(ref intArray, 0);
-            //Sort.quickSort(ref intArray, 0, intArray.Length - 1);
-            //Sort.mergeSort();
-
-            Console.WriteLine("New:");
-            int[] sortedArray = Sort.mergeSort(ref intArray, 0, intArray.Length - 1);
-
-            for (int i = 0; i < sortedArray.Length; i++)
-            {
-                Console.Write(sortedArray[i] + " ");
-                if (i == sortedArray.Length - 1) Console.WriteLine("");
-            }
+            Console.WriteLine("The number {0} is at index {1}.", 11, Search.binarySearch(11, arr, 0, arr.Length - 1));
 
 
-
-            //for (int i = 0; i < intArray.Length; i++)
-            //{
-            //    Console.Write(intArray[i] + " ");
-            //    if (i == intArray.Length - 1) Console.WriteLine("");
-            //}
-            Console.WriteLine();
+        
         }
 
     }

@@ -24,6 +24,22 @@ namespace Practice
             }
         }
 
+        public static void slowSortReverse(ref int[] arr, int startIndex)
+        {
+            if (startIndex != arr.Length)
+            {
+                int maxIndex = startIndex;
+
+                for (int i = startIndex; i < arr.Length; i++)
+                {
+                    if (arr[i] > arr[startIndex])
+                        swap(ref arr, i, maxIndex);
+                }
+
+                slowSortReverse(ref arr, startIndex + 1);
+            }
+        }
+
         public static int[] mergeSort(ref int[] arr, int start, int end)
         {
             if (arr.Length == 0) return null;

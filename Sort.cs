@@ -62,11 +62,6 @@ namespace Practice
                     right = mergeSort(ref arr, midpoint + 1, end);
                 }
 
-                //for (int i = 0; i < left.Length; i++) Console.Write(left[i] + " ");
-                //Console.Write("     ");
-                //for (int i = 0; i < right.Length; i++) Console.Write(right[i] + " ");
-                //Console.WriteLine();
-
                 int sortedIndex, leftIndex, rightIndex;
                 sortedIndex = leftIndex = rightIndex = 0;
 

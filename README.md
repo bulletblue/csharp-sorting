@@ -1,9 +1,9 @@
 # Search and Sorting Algorithm Implementations in C#
 
-## Search
+# Search
  * Binary Search
 
-## Sort
+# Sort
  * Slow (Brute Force) Sort
  * Merge Sort
  * Quick Sort

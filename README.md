@@ -1,10 +1,9 @@
 ## Search and Sorting Algorithm Implementations in C#
 
 # Search
-Binary Search
+ * Binary Search
 
 # Sort
-Slow (Brute Force) Sort
-Reverse Slow Sort
-Merge Sort
-Quick Sort
+ * Slow (Brute Force) Sort
+ * Merge Sort
+ * Quick Sort

@@ -1,4 +1,4 @@
-# Search and Sorting Implementations in C#
+# Search and Sorting Implementations
 
 # Search
  * Binary Search
